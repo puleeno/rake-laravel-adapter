@@ -8,6 +8,13 @@
             "Rake\\LaravelAdapter\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rake\\LaravelAdapter\\RakeServiceProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "Puleeno Nguyen",
