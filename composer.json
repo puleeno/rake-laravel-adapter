@@ -1,0 +1,21 @@
+{
+    "name": "puleeno/rake-laravel-adapter",
+    "description": "The Laravel adapter for Rake migration framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rake\\LaravelAdapter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Puleeno Nguyen",
+            "email": "puleeno@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "rake-php-migrate/rake": "^1.0"
+    }
+}
