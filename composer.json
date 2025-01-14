@@ -16,6 +16,6 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "rake-php-migrate/rake": "^1.0"
+        "rake-php-migrate/rake": "^1.1"
     }
 }
