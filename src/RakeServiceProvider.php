@@ -3,15 +3,16 @@
 namespace Rake\LaravelAdapter;
 
 use Illuminate\Support\ServiceProvider;
+use Rake\LaravelAdapter\Database\EloquentDriver;
 
 class RakeServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        // Đăng ký migrations
+        // Load migrations
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-        // Nếu muốn cho phép publish migrations
+        // Allow publish migrations
         $this->publishes([
             __DIR__.'/../database/migrations' => database_path('migrations')
         ], 'rake-migrations');
@@ -19,6 +20,9 @@ class RakeServiceProvider extends ServiceProvider
 
     public function register()
     {
-        // Register các service khác của package
+        $this->app->bind('rake.driver', function($app) {
+            $prefix = config('database.connections.mysql.prefix', '');
+            return new EloquentDriver($prefix);
+        });
     }
 }
